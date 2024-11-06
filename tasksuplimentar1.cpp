@@ -52,7 +52,7 @@ public:
 	}
 
 	void AfisareInPropozitie() {
-		cout << endl << "Blocul de pe strada " << this->Strada << " cu numarul " << this->Nr << ",si " << this->Apartamente << "apartamente,este locuit de " << this->Locatari << " persoane";
+		cout << endl << "Blocul de pe strada " << this->Strada << " cu numarul " << this->Nr << ",si " << this->Apartamente << " apartamente,este locuit de " << this->Locatari << " persoane";
 	}
 };
 
@@ -60,15 +60,17 @@ int main() {
 
 	int nrBlocuri = 10;
 	Bloc* vector = new Bloc[nrBlocuri];
-	for (int i = 0;i < nrBlocuri ;i++) {
+	for (int i = 0;i < nrBlocuri;i++) {
 		vector[i].citire();
 	}
 	/*for (int i = 0;i < nrBlocuri;i++) {
 		vector[i].afisare();
 	}
 	*/
+	
 	for (int i = 0;i < nrBlocuri;i++) {
 		vector[i].AfisareInPropozitie();
 	}
-	
-}
+	//dezalocam si memoria 
+	delete[] vector;
+};
